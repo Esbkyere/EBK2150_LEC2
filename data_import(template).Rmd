@@ -16,3 +16,25 @@ litters_df = janitor::clean_names(litters_df)
 ```
 
 ##Take a look at the data
+
+Printing in the console
+```{r}
+litters_df
+```
+
+You can also look at the head or tail(first or last 6 rows)
+```{r}
+head(litters_df)
+tail(litters_df)
+```
+
+Gives you a summary of measures 
+```{r}
+skimr::skim(litters_df)
+```
+
+You can also use view(litters_df) but type it in console. It helps you see the whole dataset
+clearly in another tab.
+
+
+
