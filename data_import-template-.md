@@ -218,3 +218,17 @@ pulse_df
 
 I used the janitor clean names just to get the names of the columns a
 bit presentable
+
+Read.csv vs Read_csv
+
+TRY NOT TO USE READ.CSV(WHICH IS BASE R CODE)… THERES A SLIGHT
+DIFFERENCE B/N THAT AND READ_CSV(WHICH IS NICER WHEN YOU PRINT OUT THE
+INFORMATION, SOME OTHER THINGS LIKE PARSING AND INCOMPLETE VARIBALE
+NAMES CAN ALSO BE SEEN)
+
+\##Exporting data Export the mlb subtable. remember that the current
+version of mlb table we are using is the smaller one from A1 to F7
+
+``` r
+write_csv(mlb_df, "./data/mlb_subtable.csv")
+```
