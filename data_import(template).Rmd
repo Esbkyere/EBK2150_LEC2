@@ -36,5 +36,16 @@ skimr::skim(litters_df)
 You can also use view(litters_df) but type it in console. It helps you see the whole dataset
 clearly in another tab.
 
+##Options to read_csv
 
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+```
+if you want to skip the first x (in this example 10) columns in your dataset becuase
+maybe it is blank or not needed.. you can use this. Then you  can add the col_names = false statement so that you can get random headings for the columns.
 
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv", na = c("", "NA", ".", "999"))
+```
+
+check out '?read_csv ()' for more information and ways to use it

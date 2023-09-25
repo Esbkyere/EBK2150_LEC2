@@ -133,3 +133,38 @@ Data summary
 
 You can also use view(litters_df) but type it in console. It helps you
 see the whole dataset clearly in another tab.
+
+\##Options to read_csv
+
+``` r
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10, col_names = FALSE)
+```
+
+    ## Rows: 40 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): X1, X2
+    ## dbl (6): X3, X4, X5, X6, X7, X8
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+if you want to skip the first x (in this example 10) columns in your
+dataset becuase maybe it is blank or not needed.. you can use this. Then
+you can add the col_names = false statement so that you can get random
+headings for the columns.
+
+``` r
+litters_df = read_csv("./data/FAS_litters.csv", na = c("", "NA", ".", "999"))
+```
+
+    ## Rows: 49 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): Group, Litter Number
+    ## dbl (6): GD0 weight, GD18 weight, GD of Birth, Pups born alive, Pups dead @ ...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+check out ‘?read_csv ()’ for more information and ways to use it
