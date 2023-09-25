@@ -5,6 +5,8 @@ output: github_document
 
 ```{r}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 ##read in some data
@@ -49,3 +51,22 @@ litters_df = read_csv("./data/FAS_litters.csv", na = c("", "NA", ".", "999"))
 ```
 
 check out '?read_csv ()' for more information and ways to use it
+
+
+##Other file formats
+
+READ in an excel 
+
+```{r}
+mlb_df = read_excel("./data/mlb11.xlsx", range = "A1:F7")
+mlb_df
+```
+
+Read in a Sas file
+```{r}
+pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
+pulse_df = janitor::clean_names(pulse_df)
+pulse_df
+```
+I used the janitor clean names just to get the names of the columns a bit presentable
+
