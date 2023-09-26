@@ -38,3 +38,23 @@ You can also rename specific columns as part of the procedure when selecting the
 select(litters_df, GROUP = group, LITTERNUMBER = litter_number)
 ```
 
+You can also just rename instead of selecting
+```{r}
+rename(litters_df, GROUP = group, LITTERNUMBER = litter_number)
+```
+
+
+
+Select helpers
+```{r}
+select(litters_df, starts_with("gd"))
+```
+
+Lets say you want to put litter numbers at the first column and also keep everything
+```{r}
+select(litters_df, litter_number, everything())
+```
+
+```{r}
+relocate(litters_df, litter_number)
+```
