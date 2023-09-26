@@ -5,5 +5,36 @@ output: github_document
 
 ```{r}
 library(tidyverse)
-
 ```
+
+##Load the faslitter data
+
+```{r}
+litters_df = read_csv("./data/fas_litters.csv")
+litters_df = janitor::clean_names(litters_df)
+```
+
+##select
+
+Choose some columns and not others
+
+```{r}
+select(litters_df, group, litter_number)
+```
+
+Choose a range of columns use colon
+```{r}
+select(litters_df, group, gd0_weight:pups_born_alive)
+```
+
+you can also sepcify somemthing you want to remove
+```{r}
+select(litters_df, -litter_number)
+```
+
+
+You can also rename specific columns as part of the procedure when selecting them
+```{r}
+select(litters_df, GROUP = group, LITTERNUMBER = litter_number)
+```
+
