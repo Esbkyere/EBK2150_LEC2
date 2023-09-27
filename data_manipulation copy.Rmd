@@ -94,3 +94,23 @@ What if you want to keep 2 different categoricals eg Con7 and Mod8
 filter(litters_df, group %in% c("Con7", "Mod8"))
 ```
 
+
+
+##Mutate
+
+In the example below we will create a new variable called weight gain(gestational weight on day 18 - gestational weight on day 0). We can also in the same statement change the data in the column group to lower case letters)
+
+```{r}
+mutate(
+  litters_df,
+  wt_gain = gd18_weight - gd0_weight)
+```
+
+```{r}
+mutate(litters_df, 
+       wt_gain = gd18_weight - gd0_weight,
+       group = str_to_lower(group))
+```
+
+
+
