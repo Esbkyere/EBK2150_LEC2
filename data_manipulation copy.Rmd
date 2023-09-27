@@ -58,3 +58,39 @@ select(litters_df, litter_number, everything())
 ```{r}
 relocate(litters_df, litter_number)
 ```
+
+##filter
+
+```{r}
+filter(litters_df, gd0_weight >= 22)
+```
+
+Note that below he used two equal to signs becuase hes not trying to make that variable 20 hes trying to say if the value is 20 then keep that row.
+```{r}
+filter(litters_df, gd_of_birth == 20)
+```
+
+
+In the next one the exclamation mark negates so now it will give you all the rows where gdofbirth is not 20
+```{r}
+filter(litters_df, !(gd_of_birth == 20))
+```
+
+
+In this next one we want to ammend two variables
+```{r}
+filter(litters_df, gd0_weight >= 22, gd_of_birth == 20)
+```
+
+
+What of the data is not numeric, lets say you want to keep any row with the categorical value "Con7" in it
+```{r}
+filter(litters_df, group == "Con7")
+```
+
+
+What if you want to keep 2 different categoricals eg Con7 and Mod8
+```{r}
+filter(litters_df, group %in% c("Con7", "Mod8"))
+```
+
